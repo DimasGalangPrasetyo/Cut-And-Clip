@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cut&Clip | Content Clipping Agency & MCN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#2B3140;--pn:#363D4F;--ln:#4A5268;--tl:#4FB3A9;--co:#E8806A;--am:#E3B25C;--tx:#EDE9E0;--mu:#AAB0BE;--h:"Space Grotesk",system-ui,sans-serif;--m:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.ic{width:1.3em;height:1.3em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{font-family:var(--h);line-height:1.1}
+h2{font-size:clamp(1.8rem,4.5vw,3rem);margin-bottom:.6rem}
+section{padding:6rem 1.25rem;max-width:1100px;margin:auto;position:relative}
+.sub{color:var(--mu);max-width:52ch;margin-bottom:2.5rem}
+.tc{font-family:var(--m);font-size:.8rem;color:var(--am)}
+/* nav */
+nav{position:fixed;inset:0 0 auto;z-index:20;background:#2B3140ee;backdrop-filter:blur(8px);border-bottom:1px solid var(--ln)}
+nav div{display:flex;align-items:center;gap:1.2rem;max-width:1100px;margin:auto;padding:.7rem 1.25rem}
+.logo{font:700 1.15rem var(--h);display:flex;gap:.4rem;align-items:center;margin-right:auto}.logo .ic{color:var(--co);transition:transform .4s}.logo:hover .ic{transform:rotate(-25deg) scale(1.2)}
+nav a.l{font-size:.9rem;color:var(--mu);transition:color .2s}nav a.l:hover{color:var(--tx)}
+#ph{position:absolute;left:0;bottom:-1px;height:3px;width:0;background:linear-gradient(90deg,var(--tl),var(--co))}
+#ph::after{content:"";position:absolute;right:-6px;top:-5px;border:6px solid transparent;border-top:8px solid var(--co)}
+@media(max-width:760px){nav a.l{display:none}}
+.btn{display:inline-flex;gap:.5rem;align-items:center;padding:.8rem 1.4rem;border-radius:999px;background:var(--co);color:#2B3140;font:700 .95rem var(--h);transition:transform .2s,box-shadow .3s;border:0;cursor:pointer;will-change:transform}
+.btn:hover{box-shadow:0 8px 26px #E8806A55}.btn.g{background:transparent;color:var(--tx);border:1px solid var(--ln)}
+/* hero */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;padding-top:7rem}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.6rem);margin:.8rem 0 1.2rem}
+.hero h1 span{display:inline-block;clip-path:inset(0 100% 0 0);animation:wipe .9s cubic-bezier(.7,0,.2,1) forwards}
+.hero h1 span:nth-child(2){animation-delay:.35s}.hero h1 span:nth-child(3){animation-delay:.7s;color:var(--tl)}
+.hero h1:hover span{animation:glitch .35s steps(2) 1}
+@keyframes wipe{to{clip-path:inset(0 0 0 0)}}
+@keyframes glitch{50%{text-shadow:3px 0 var(--co),-3px 0 var(--tl)}}
+.hero p{color:var(--mu);max-width:46ch;margin-bottom:1.8rem}.hero .row{display:flex;gap:.8rem;flex-wrap:wrap}
+.phone{width:min(260px,70vw);aspect-ratio:9/16;margin:auto;border:2px solid var(--ln);border-radius:28px;background:linear-gradient(160deg,var(--pn),#2f3647);padding:14px;position:relative;overflow:hidden;transition:transform .15s;animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{translate:0 -12px}}
+.phone .scr{height:100%;border-radius:18px;background:repeating-linear-gradient(115deg,#3d4660 0 14px,#434d69 14px 28px);position:relative;display:grid;place-items:center}
+.phone .scr::before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,#2B3140dd)}
+.phone .play{width:64px;height:64px;border-radius:50%;background:var(--tl);color:#2B3140;display:grid;place-items:center;z-index:1;animation:pl 2s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 #4FB3A988}100%{box-shadow:0 0 0 22px #4FB3A900}}
+.bar{position:absolute;left:14px;right:14px;bottom:20px;z-index:2;height:5px;background:#ffffff33;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;width:0;background:var(--co);animation:pg 6s linear infinite}
+@keyframes pg{to{width:100%}}
+.phone .tc{position:absolute;left:24px;bottom:34px;z-index:2}
+.rec{position:absolute;top:24px;left:24px;z-index:2;display:flex;gap:.4rem;align-items:center;font:.75rem var(--m)}.rec::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--co);animation:bl 1s infinite}
+@keyframes bl{50%{opacity:.2}}
+@media(max-width:800px){.hero{grid-template-columns:1fr;text-align:left}}
+/* strip */
+.strip{overflow:hidden;border-block:1px solid var(--ln);background:var(--pn);padding:.7rem 0;white-space:nowrap}
+.strip div{display:inline-flex;gap:2.5rem;animation:mq 28s linear infinite;font:500 .95rem var(--h);color:var(--mu)}.strip span{display:inline-flex;gap:.6rem;align-items:center}.strip .ic{color:var(--am)}
+.strip:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* flow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}
+.flow::before{content:"";position:absolute;left:0;top:28px;height:2px;width:var(--w,0%);background:var(--co);transition:width 1.4s cubic-bezier(.6,0,.2,1)}
+.step{background:var(--pn);border:1px solid var(--ln);border-radius:14px;padding:1.2rem;transition:transform .3s,border-color .3s}
+.step:hover{transform:translateY(-6px);border-color:var(--tl)}.step .ic{color:var(--tl);width:1.8em;height:1.8em;margin-bottom:.6rem}.step p{color:var(--mu);font-size:.9rem}
+.cutline{display:flex;align-items:center;gap:.5rem;color:var(--co);margin-top:2rem}.cutline hr{flex:1;border:0;border-top:2px dashed var(--co);transform-origin:left;transform:scaleX(0);transition:transform 1.2s}.cutline.in hr{transform:scaleX(1)}
+@media(max-width:800px){.flow{grid-template-columns:1fr 1fr}}
+/* cards */
+.g3,.g4{display:grid;gap:1.1rem}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.g3,.g4{grid-template-columns:1fr 1fr}}@media(max-width:560px){.g3,.g4,.flow{grid-template-columns:1fr}}
+.card{--c:var(--tl);background:var(--pn);border:1px solid var(--ln);border-radius:16px;padding:1.4rem;position:relative;overflow:hidden;transition:transform .15s,border-color .3s;transform-style:preserve-3d}
+.card::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--c);transition:width .5s}.card:hover::after{width:100%}.card:hover{border-color:var(--c)}
+.card .ic{color:var(--c);width:1.9em;height:1.9em;margin-bottom:.8rem;transition:transform .4s}.card:hover .ic{transform:scale(1.15) rotate(-8deg)}
+.card h3{font-size:1.2rem;margin-bottom:.4rem}.card p{color:var(--mu);font-size:.92rem}
+.ch .h{font:.8rem var(--m);color:var(--c);margin-bottom:.3rem;word-break:break-all}
+/* pricing */
+.tabs{display:inline-flex;background:var(--pn);border:1px solid var(--ln);border-radius:999px;padding:4px;margin-bottom:1.6rem;position:relative}
+.tabs button{position:relative;z-index:1;background:none;border:0;color:var(--mu);font:500 .9rem var(--h);padding:.55rem 1.1rem;cursor:pointer;transition:color .3s}.tabs button.on{color:#2B3140}
+.tabs i{position:absolute;top:4px;bottom:4px;border-radius:999px;background:var(--am);transition:left .35s cubic-bezier(.6,0,.2,1),width .35s}
+.price{font:700 1.9rem var(--h);margin:.6rem 0}.price small{font:.8rem Inter;color:var(--mu)}
+.card ul{list-style:none;padding:0;margin:.8rem 0 1.2rem;color:var(--mu);font-size:.9rem}.card li{padding:.25rem 0 .25rem 1.4rem;position:relative}.card li::before{content:"";position:absolute;left:0;top:.7em;width:.8rem;height:2px;background:var(--c)}
+.card.hot{--c:var(--co);transform:translateY(-8px)}
+.note{color:var(--mu);font-size:.85rem;margin-top:1rem}
+/* showcase */
+.clip{aspect-ratio:9/16;border-radius:16px;border:1px solid var(--ln);background:repeating-linear-gradient(115deg,var(--pn) 0 14px,#3b4358 14px 28px);position:relative;overflow:hidden;cursor:pointer;transition:transform .15s,border-color .3s}
+.clip:hover{border-color:var(--c)}.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.clip .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:1rem;background:linear-gradient(transparent 45%,#252b39ee);gap:.3rem}
+.clip .ov b{font:700 1rem var(--h)}.clip .ov span{font:.72rem var(--m);color:var(--c)}.clip .ov small{color:var(--mu);font-size:.75rem}
+.clip .tb{height:4px;background:#ffffff30;border-radius:9px;overflow:hidden}.clip .tb i{display:block;height:100%;width:0;background:var(--c);transition:width 2.5s linear}.clip:hover .tb i{width:100%}
+.clip .pi{position:absolute;top:50%;left:50%;translate:-50% -50%;width:54px;height:54px;border-radius:50%;background:var(--c);color:#2B3140;display:grid;place-items:center;transition:transform .3s,opacity .3s}.clip:hover .pi{transform:scale(1.2);opacity:.0}
+/* faq/contact */
+details{background:var(--pn);border:1px solid var(--ln);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.7rem;transition:border-color .3s}details:hover,details[open]{border-color:var(--tl)}
+summary{cursor:pointer;font:500 1rem var(--h);list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";color:var(--tl);transition:transform .3s;font-size:1.3rem;line-height:1}details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mu);margin-top:.6rem;animation:dn .4s}@keyframes dn{from{opacity:0;translate:0 -6px}}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3rem}@media(max-width:800px){.ct{grid-template-columns:1fr}}
+.ct .card a{display:flex;gap:.6rem;align-items:center;padding:.5rem 0;color:var(--tx);transition:padding .25s,color .25s}.ct .card a:hover{padding-left:.6rem;color:var(--co)}
+footer{border-top:1px solid var(--ln);padding:2rem 1.25rem;text-align:center;color:var(--mu);font-size:.85rem}
+/* reveal + cursor */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.6,0,.2,1),transform .8s cubic-bezier(.6,0,.2,1)}.rv.in{opacity:1;transform:none}
+#cur{position:fixed;z-index:50;pointer-events:none;color:var(--co);width:30px;height:30px;left:-40px;top:-40px;transition:transform .15s,color .2s;margin:-15px 0 0 -15px}#cur.h{transform:scale(1.5) rotate(-30deg);color:var(--tl)}
+@media(hover:none){#cur{display:none}}@media(hover:hover){body.cc,body.cc *{cursor:none!important}}
+:focus-visible{outline:2px solid var(--am);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 span{clip-path:none}}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="cut" viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></symbol>
+<symbol id="play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+<symbol id="film" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/></symbol>
+<symbol id="usr" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-4 3-6 6.5-6s6.5 2 6.5 6M16 4.5a3.5 3.5 0 0 1 0 7M18 14c2.5.7 3.5 2.7 3.5 6"/></symbol>
+<symbol id="sl" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></symbol>
+<symbol id="up" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 20h16"/></symbol>
+<symbol id="wa" viewBox="0 0 24 24"><path d="M4 20l1.5-4.5A8 8 0 1 1 9 18.5z"/></symbol>
+<symbol id="ml" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+</defs></svg>
+<svg id="cur" class="ic" viewBox="0 0 24 24"><use href="#cut"/></svg>
+<nav><div><a class="logo" href="#top"><svg class="ic"><use href="#cut"/></svg>Cut&amp;Clip</a><a class="l" href="#cara">Cara kerja</a><a class="l" href="#layanan">Layanan</a><a class="l" href="#channel">Channel</a><a class="l" href="#harga">Harga</a><a class="l" href="#hasil">Hasil karya</a><a class="btn mg" href="#kontak">Hubungi kami</a></div><i id="ph"></i></nav>
+
+<section class="hero" id="top"><div>
+<span class="tc">00:00:00 / Agensi content clipping &amp; MCN</span>
+<h1><span>Video panjang,</span> <span>dipotong jadi</span> <span>klip yang ditonton.</span></h1>
+<p>Cut&amp;Clip memotong video durasi panjang menjadi video pendek vertikal secara massal, untuk monetisasi affiliate, pengelolaan konten kreator dan UMKM, serta jasa editing.</p>
+<div class="row"><a class="btn mg" href="#harga"><svg class="ic"><use href="#cut"/></svg>Lihat paket</a><a class="btn g mg" href="#hasil"><svg class="ic"><use href="#play"/></svg>Tonton hasil</a></div></div>
+<div class="phone" id="ph1"><div class="scr"><div class="rec">REC</div><div class="play"><svg class="ic"><use href="#play"/></svg></div></div><span class="tc">00:00:15</span><div class="bar"><i></i></div></div></section>
+
+<div class="strip"><div id="mq"></div></div>
+
+<section id="cara"><h2 class="rv">Dari satu video panjang ke banyak klip</h2><p class="sub rv">Alur kerja kami dari bahan mentah sampai tayang.</p>
+<div class="flow rv" id="flow">
+<div class="step"><svg class="ic"><use href="#up"/></svg><h3>Kirim video</h3><p>Anda kirim tautan atau file video panjang.</p></div>
+<div class="step"><svg class="ic"><use href="#cut"/></svg><h3>Pilih momen</h3><p>Kami cari bagian terbaik dan potong.</p></div>
+<div class="step"><svg class="ic"><use href="#sl"/></svg><h3>Edit vertikal</h3><p>Rasio 9:16, teks, dan ritme sesuai platform.</p></div>
+<div class="step"><svg class="ic"><use href="#film"/></svg><h3>Tayang</h3><p>Klip diunggah ke channel yang cocok.</p></div></div>
+<div class="cutline rv" id="cl"><svg class="ic"><use href="#cut"/></svg><hr></div></section>
+
+<section id="layanan"><h2 class="rv">Tiga layanan</h2><p class="sub rv">Pilih satu atau gabungkan sesuai kebutuhan.</p>
+<div class="g3">
+<div class="card rv tilt"><svg class="ic"><use href="#cut"/></svg><h3>Clipping affiliate</h3><p>Klip massal dari video panjang untuk monetisasi affiliate.</p></div>
+<div class="card rv tilt" style="--c:var(--co)"><svg class="ic"><use href="#usr"/></svg><h3>Manajemen konten</h3><p>Kami kelola konten untuk kreator dan UMKM, dari rencana sampai unggah.</p></div>
+<div class="card rv tilt" style="--c:var(--am)"><svg class="ic"><use href="#sl"/></svg><h3>Jasa editing video</h3><p>Editing video pendek maupun panjang sesuai gaya brand Anda.</p></div></div></section>
+
+<section id="channel"><h2 class="rv">Jaringan channel kami</h2><p class="sub rv">Empat akun dengan fokus berbeda, satu jaringan.</p>
+<div class="g4">
+<a class="card ch rv tilt" href="https://instagram.com/cutandclip.official" target="_blank" rel="noopener" style="--c:var(--tx)"><svg class="ic"><use href="#film"/></svg><div class="h">@cutandclip.official</div><h3>Official</h3><p>Branding, rate card, alur kerja, dan edukasi membuat konten.</p></a>
+<a class="card ch rv tilt" href="https://instagram.com/cutandclip.gaming" target="_blank" rel="noopener"><svg class="ic"><use href="#play"/></svg><div class="h">@cutandclip.gaming</div><h3>Gaming</h3><p>Momen krusial turnamen esports seperti MPL ID dan komunitas gim.</p></a>
+<a class="card ch rv tilt" href="https://instagram.com/cutandclip.sport" target="_blank" rel="noopener" style="--c:var(--co)"><svg class="ic"><use href="#cut"/></svg><div class="h">@cutandclip.sport</div><h3>Sport</h3><p>Gol dramatis dan selebrasi BRI Liga 1 serta Timnas Indonesia.</p></a>
+<a class="card ch rv tilt" href="https://instagram.com/cutandclip.information" target="_blank" rel="noopener" style="--c:var(--am)"><svg class="ic"><use href="#sl"/></svg><div class="h">@cutandclip.information</div><h3>Information</h3><p>Taktik, fakta sains, tren teknologi, dan infografis budaya pop.</p></a></div></section>
+
+<section id="harga"><h2 class="rv">Paket dan harga</h2><p class="sub rv">Harga masih contoh dan akan kami umumkan. Minta penawaran lewat WhatsApp.</p>
+<div class="tabs rv" id="tabs"><i></i><button class="on" data-k="edit">Jasa editing</button><button data-k="mg">Manajemen konten</button><button data-k="af">Clipping affiliate</button></div>
+<div class="g3" id="pk"></div><p class="note">Nama paket dan harga bisa diubah di bagian PAKET pada file index.html.</p></section>
+
+<section id="hasil"><h2 class="rv">Hasil karya</h2><p class="sub rv">Arahkan kursor untuk memutar. Klik untuk membuka postingan aslinya.</p><div class="g4" id="cl4"></div></section>
+
+<section id="faq"><h2 class="rv">Pertanyaan umum</h2>
+<details class="rv"><summary>Platform apa saja yang didukung?</summary><p>Klip dibuat vertikal 9:16 dan siap untuk TikTok, Instagram Reels, dan YouTube Shorts.</p></details>
+<details class="rv"><summary>Berapa lama pengerjaan?</summary><p>Tergantung jumlah dan durasi video. Kami konfirmasi estimasi saat Anda minta penawaran.</p></details>
+<details class="rv"><summary>Bagaimana sistem affiliate?</summary><p>Skemanya dibahas langsung agar sesuai dengan produk dan target Anda.</p></details>
+<details class="rv"><summary>UMKM kecil boleh mendaftar?</summary><p>Boleh. Kami punya paket manajemen konten yang bisa disesuaikan dengan skala usaha.</p></details></section>
+
+<section id="kontak"><h2 class="rv">Mulai potong video Anda</h2><p class="sub rv">Ceritakan kebutuhan Anda, kami balas lewat kontak di bawah.</p>
+<div class="ct"><div class="card rv" style="--c:var(--co)"><a href="https://wa.me/6285219362314" target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg>+62 852-1936-2314</a><a href="mailto:contact.cutandclip@gmail.com"><svg class="ic"><use href="#ml"/></svg>contact.cutandclip@gmail.com</a><a href="https://instagram.com/cutandclip.official" target="_blank" rel="noopener"><svg class="ic"><use href="#ig"/></svg>@cutandclip.official</a></div>
+<div class="rv"><a class="btn mg" href="https://wa.me/6285219362314?text=Halo%20Cut%26Clip%2C%20saya%20mau%20tanya%20layanan%20Anda." target="_blank" rel="noopener"><svg class="ic"><use href="#wa"/></svg>Chat WhatsApp</a></div></div></section>
+<footer>&copy; Cut&amp;Clip. Content Clipping Agency &amp; MCN.</footer>
+
+<script src="assets/clips.js"></script>
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+/* PAKET: ubah nama dan harga di sini */
+const PAKET={
+edit:[{n:"Trim",p:"Rp XXX.000",u:"per video",f:["Editing dasar","Subtitle otomatis","1 kali revisi"]},{n:"Cut",p:"Rp XXX.000",u:"per paket",f:["Beberapa klip per bulan","Subtitle dan efek","2 kali revisi"],hot:1},{n:"Master",p:"Hubungi kami",u:"volume besar",f:["Klip massal","Prioritas pengerjaan","Revisi lebih longgar"]}],
+mg:[{n:"Starter",p:"Rp XXX.000",u:"per bulan",f:["1 akun dikelola","Jadwal unggah","Laporan bulanan"]},{n:"Growth",p:"Rp XXX.000",u:"per bulan",f:["Beberapa akun","Rencana konten","Laporan mingguan"],hot:1},{n:"Network",p:"Hubungi kami",u:"sesuai skala",f:["Banyak akun","Strategi konten","Tim khusus"]}],
+af:[{n:"Bagi hasil",p:"Sesuai skema",u:"dibahas bersama",f:["Klip untuk produk affiliate","Tanpa biaya di muka"]},{n:"Hybrid",p:"Rp XXX.000",u:"+ bagi hasil",f:["Biaya produksi ringan","Bagi hasil penjualan"],hot:1},{n:"Kustom",p:"Hubungi kami",u:"sesuai target",f:["Skema khusus","Target volume klip"]}]};
+const WA="https://wa.me/6285219362314?text=";
+function renderPk(k){$("#pk").innerHTML=PAKET[k].map((x,i)=>`<div class="card tilt ${x.hot?"hot":""}" style="--c:${["var(--tl)","var(--co)","var(--am)"][i]};animation:dn .5s ${i*.1}s both"><h3>${x.n}</h3><div class="price">${x.p}<br><small>${x.u}</small></div><ul>${x.f.map(f=>"<li>"+f+"</li>").join("")}</ul><a class="btn mg" href="${WA+encodeURIComponent("Halo Cut&Clip, saya tertarik paket "+x.n)}" target="_blank" rel="noopener">Minta penawaran</a></div>`).join("");bind()}
+function tab(b){$$("#tabs button").forEach(x=>x.classList.toggle("on",x===b));const i=$("#tabs i");i.style.left=b.offsetLeft+"px";i.style.width=b.offsetWidth+"px";renderPk(b.dataset.k)}
+$$("#tabs button").forEach(b=>b.onclick=()=>tab(b));addEventListener("load",()=>tab($("#tabs .on")));addEventListener("resize",()=>tab($("#tabs .on")));
+/* klip: baca daftar dari assets/clips.js */
+const C={gaming:"var(--tl)",sport:"var(--co)",information:"var(--am)",official:"var(--tx)"};
+$("#cl4").innerHTML=(window.CLIPS||[]).map(c=>`<div class="clip rv tilt" style="--c:${C[c.channel]||"var(--tl)"}" data-l="${c.link||""}"><video muted loop playsinline preload="metadata" src="assets/videos/${c.file}"></video><div class="pi"><svg class="ic"><use href="#play"/></svg></div><div class="ov"><span>@cutandclip.${c.channel}</span><b>${c.title}</b><small class="em">Taruh ${c.file} di assets/videos</small><div class="tb"><i></i></div></div></div>`).join("");
+$$(".clip").forEach(el=>{const v=el.querySelector("video");v.onerror=()=>{v.remove()};v.onloadeddata=()=>el.querySelector(".em").remove();
+el.onmouseenter=()=>v.isConnected&&v.play().catch(()=>0);el.onmouseleave=()=>{if(v.isConnected){v.pause();v.currentTime=0}};el.onclick=()=>el.dataset.l&&open(el.dataset.l,"_blank","noopener")});
+/* marquee */
+$("#mq").innerHTML=Array(2).fill(["Clipping","Editing 9:16","Esports","Sepak bola","Fakta unik","Affiliate","Manajemen kreator"].map(t=>`<span><svg class="ic"><use href="#film"/></svg>${t}</span>`).join("")).join("");
+/* reveal */
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");if(x.target.id==="flow")x.target.style.setProperty("--w","100%");io.unobserve(x.target)}}),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+if(!("IntersectionObserver" in window))$$(".rv").forEach(e=>e.classList.add("in"));$$(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)*.08+"s";io.observe(el)});
+/* playhead */
+addEventListener("scroll",()=>{$("#ph").style.width=scrollY/(document.body.scrollHeight-innerHeight)*100+"%"},{passive:true});
+/* tilt, magnet, cursor */
+function bind(){$$(".tilt").forEach(el=>{if(el._b)return;el._b=1;el.addEventListener("mousemove",e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(700px) rotateY(${x*9}deg) rotateX(${-y*9}deg)`});el.addEventListener("mouseleave",()=>el.style.transform="")});
+$$(".mg").forEach(el=>{if(el._m)return;el._m=1;el.addEventListener("mousemove",e=>{const r=el.getBoundingClientRect();el.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.25}px,${(e.clientY-r.top-r.height/2)*.35}px)`});el.addEventListener("mouseleave",()=>el.style.transform="")})}
+bind();
+if(matchMedia("(hover:hover)").matches){const c=$("#cur");document.body.classList.add("cc");addEventListener("mousemove",e=>{c.style.left=e.clientX+"px";c.style.top=e.clientY+"px";c.classList.toggle("h",!!e.target.closest("a,button,summary,.clip"))})}
+const t0=Date.now();setInterval(()=>{const s=((Date.now()-t0)/1000|0)%15;$("#ph1 .tc").textContent="00:00:"+String(s).padStart(2,"0")},1000);
+</script></body></html>
